@@ -1,0 +1,39 @@
+{
+  "name": "nextjs-extension-starter",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && ./export.sh && node ./remove-inline-scripts.js",
+    "start": "next start",
+    "prettify": "npx prettier . --write",
+    "lint": "next lint --fix",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "next": "14.2.2",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.2",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "prettier": "3.2.5",
+    "stylelint": "^16.3.1",
+    "stylelint-config-standard": "^36.0.0",
+    "stylelint-config-idiomatic-order": "^10.0.0",
+    "stylelint-config-standard-scss": "^13.0.0",
+    "typescript": "^5"
+  },
+  "lint-staged": {
+    "*.{css, scss}": "npx stylelint --fix",
+    "*.{js,jsx,ts,tsx}": "eslint --cache --fix",
+    "*.{js,jsx,ts,tsx,css,md}": "prettier --write"
+  }
+}
